@@ -2,10 +2,7 @@ package com.study_chanee.domain;
 
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
@@ -38,5 +35,18 @@ public class Account {
 
     private String location;
 
+    @Lob @Basic(fetch = FetchType.EAGER)
     private String profileImage;
+
+    private boolean studyCreatedByEmail;
+
+    private boolean studyCreatedByWeb;
+
+    private boolean studyEnrollmentResultByEmail;
+
+    private boolean studyEnrollmentResultByWeb;
+
+    private boolean studyUpdatedByEmail;
+
+    private boolean studyUpdatedByWeb;
 }
