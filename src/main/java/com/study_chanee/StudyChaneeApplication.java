@@ -1,13 +1,14 @@
 package com.study_chanee;
 
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import static org.springframework.boot.SpringApplication.*;
 
 @SpringBootApplication
 public class StudyChaneeApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(StudyChaneeApplication.class, args);
+        run(StudyChaneeApplication.class, args);
     }
 
 }
