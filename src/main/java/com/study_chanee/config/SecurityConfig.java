@@ -8,6 +8,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 import static org.springframework.boot.autoconfigure.security.servlet.PathRequest.*;
+import static org.springframework.http.HttpMethod.GET;
 
 @Configuration
 @EnableWebSecurity
@@ -18,7 +19,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .mvcMatchers("/", "/login", "/sign-up", "/check-email", "/check-email-token",
                         "/email-login", "/check-email-login", "/login-link").permitAll()
-                .mvcMatchers(HttpMethod.GET, "/profile/*").permitAll()
+                .mvcMatchers(GET, "/profile/*").permitAll()
                 .anyRequest().authenticated();
     }
 
