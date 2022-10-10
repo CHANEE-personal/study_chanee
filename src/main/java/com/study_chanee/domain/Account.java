@@ -4,8 +4,8 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.UUID;
 
+import static java.util.UUID.randomUUID;
 import static javax.persistence.FetchType.EAGER;
 
 @Entity
@@ -54,7 +54,7 @@ public class Account {
     private boolean studyUpdatedByWeb;
 
     public void generateEmailCheckToken() {
-        this.emailCheckToken = UUID.randomUUID().toString();
+        this.emailCheckToken = randomUUID().toString();
     }
 
     public void completeSignUp() {
