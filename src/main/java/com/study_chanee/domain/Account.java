@@ -5,6 +5,7 @@ import lombok.*;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
+import static java.time.LocalDateTime.now;
 import static java.util.UUID.randomUUID;
 import static javax.persistence.FetchType.EAGER;
 
@@ -59,6 +60,6 @@ public class Account {
 
     public void completeSignUp() {
         this.emailVerified = true;
-        this.joinedAt = LocalDateTime.now();
+        this.joinedAt = now();
     }
 }
