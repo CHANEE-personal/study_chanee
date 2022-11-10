@@ -8,6 +8,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import static com.study_chanee.domain.Account.builder;
+
 @Service
 @RequiredArgsConstructor
 public class AccountService {
@@ -24,7 +26,7 @@ public class AccountService {
     }
 
     private Account saveNewAccount(SignUpForm signUpForm) {
-        Account account = Account.builder()
+        Account account = builder()
                 .email(signUpForm.getEmail())
                 .nickname(signUpForm.getNickname())
                 .password(passwordEncoder.encode(signUpForm.getPassword())) // TODO encoding 해야함
